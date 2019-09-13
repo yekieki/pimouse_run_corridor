@@ -27,10 +27,9 @@ class WallAround():
         rate = rospy.Rate(20)
         data = Twist()
 
-        data.linear.x = 0.0
+        data.linear.x = 0.3
         data.angular.z = 0.0
         while not rospy.is_shutdown():
-            data.linear.x = 0.3
 
             if self.wall_front(self.sensor_values):
                 data.angular.z = - math.pi
