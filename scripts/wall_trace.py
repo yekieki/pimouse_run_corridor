@@ -31,9 +31,7 @@ class WallStop():
                 elif s.left_side < 10:               data.angular.z = 0.0
                 else:
 	                target = 50
-	                #1cm近づくと値がだいたい50増える
 	                error = (target - s.left_side)/50.0
-	                #1cmあたり3[deg/s]変化をつける
 	                data.angular.z = error * 3 * math.pi / 180.0
 
 	        self.cmd_vel.publish(data)
